@@ -1,6 +1,6 @@
 import {Subject, LMS} from "./subject/subjects"
 
-//    SUBJECT IMPLEMENTATION
+//         SUBJECT IMPLEMENTATION
 console.log("//////////SUBJECT IMPLEMENTATION")
 
 
@@ -32,7 +32,7 @@ lms.readAll()
 console.log(lms.verify(historya))
 
 
-//    TEACHERS IMPLEMENTATION
+//           TEACHERS IMPLEMENTATION
 console.log("/////////TEACHERS IMPLEMENTATION")
 
 
@@ -67,7 +67,7 @@ const data={
 
  // forupdate
 
- const updatedProfile={   
+const updatedProfile={   
   name: {
     first: "enzas",
     last: "?"
@@ -90,7 +90,6 @@ const data={
       subject: "history"
     }
   ],
-  description: "my name is enza"
 }
 
 
@@ -103,3 +102,68 @@ const teacherId2=teachers.add(updatedProfile)
 
 // teachers.remove(teacherId)
 teachers.readAll()
+
+
+//         PUPIL IMPLEMENTATION
+
+import {Pupils} from "./pupils/pupils"
+const data1={
+  name: {
+    first: "luka",
+    last: "magradze"
+  },
+  image: "https://image.com",
+  dateOfBirth: "21/08/2004",
+  phones: [
+    {
+      phone: "321 092 8293",
+      primary: true
+    }
+  ],
+  sex: "male",
+  description: "im luka and in 16 yers old",
+}
+
+const data2={
+  name: {
+    first: "lula",
+    last: "magr"
+  },
+  image: "https://image.com",
+  dateOfBirth: "21/08/2004",
+  phones: [
+    {
+      phone: "334 492 8293",
+      primary: false
+    }
+  ],
+  sex: "female",
+}
+
+const updatedProfile1={
+name: {
+  first: "lulaa",
+  last: "magraaaaa"
+},
+image: "https://image.com",
+dateOfBirth: "21/08/2004",
+phones: [
+  {
+    phone: "334 492 8254",
+    primary: true
+  }
+],
+sex: "female",
+}
+
+
+
+const pupils1 = new Pupils();
+const pupil1 = pupils1.add(data1);
+const pupil2 = pupils1.add(data2)
+pupils1.read(pupil1)
+pupils1.readAll()
+
+pupils1.update(pupil2, updatedProfile1)
+//  pupils.remove(pupil)
+pupils1.readAll()
