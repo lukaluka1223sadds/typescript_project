@@ -83,7 +83,8 @@ const teacherId2 = teachers_1.teachers.add(updatedProfile);
 // const teacherId1 = teachers.update(teacherId, updatedProfile)
 // teachers.remove(teacherId)
 teachers_1.teachers.readAll();
-//         PUPIL IMPLEMENTATION
+//         Pupil implementation
+console.log(" ////////////PUPIL IMPLEMENTATION ");
 const pupils_1 = require("./pupils/pupils");
 const data1 = {
     name: {
@@ -131,11 +132,24 @@ const updatedProfile1 = {
     ],
     sex: "female",
 };
-const pupils1 = new pupils_1.Pupils();
-const pupil1 = pupils1.add(data1);
-const pupil2 = pupils1.add(data2);
-pupils1.read(pupil1);
-pupils1.readAll();
-pupils1.update(pupil2, updatedProfile1);
-//  pupils.remove(pupil)
-pupils1.readAll();
+const pupils = new pupils_1.Pupils();
+const pupil = pupils.add(data1);
+const pupil1 = pupils.add(data2);
+// pupils1.read(pupil1)
+// pupils1.readAll()
+// pupils.update(pupil1, updatedProfile1)
+// pupils.remove(pupil)
+pupils.readAll();
+//        GROUPS   IMPLEMENTATION
+console.log("///////// GROUPS   IMPLEMENTATION");
+const groups_1 = require("./groups/groups");
+const room = 236;
+const groups = new groups_1.Groups();
+const groupId = groups.add(room);
+const groupId1 = groups.add(322);
+groups.addPupil(groupId, pupil);
+groups.addPupil(groupId, pupil1);
+groups.removePupil(groupId, pupil);
+groups.read(groupId1);
+groups.update(groupId, { room: 237 });
+groups.readAll();

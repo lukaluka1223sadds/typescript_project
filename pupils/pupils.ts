@@ -49,7 +49,7 @@ class Pupils implements addPupil{
         console.log("pupil is not found")
        }
     } 
-    readAll(){
+    readAll():void{
         console.log(this.PupilsArray)
     }
     verify(PupilVerify:PupilsInterface):boolean{
@@ -61,7 +61,7 @@ class Pupils implements addPupil{
         this.PupilsArray[findPupilIndex]={...this.PupilsArray[findPupilIndex],...updatedProfile}
         return this.PupilsArray[findPupilIndex].id
     }
-    remove(pupilId:string){
+    remove(pupilId:string):void{
      this.PupilsArray=this.PupilsArray.filter(a=>a.id !==pupilId)
     }
 }

@@ -104,7 +104,9 @@ const teacherId2=teachers.add(updatedProfile)
 teachers.readAll()
 
 
-//         PUPIL IMPLEMENTATION
+//         Pupil implementation
+
+console.log( " ////////////PUPIL IMPLEMENTATION " )
 
 import {Pupils} from "./pupils/pupils"
 const data1={
@@ -158,12 +160,33 @@ sex: "female",
 
 
 
-const pupils1 = new Pupils();
-const pupil1 = pupils1.add(data1);
-const pupil2 = pupils1.add(data2)
-pupils1.read(pupil1)
-pupils1.readAll()
+const pupils = new Pupils();
+const pupil = pupils.add(data1);
+const pupil1 = pupils.add(data2)
+// pupils1.read(pupil1)
+// pupils1.readAll()
 
-pupils1.update(pupil2, updatedProfile1)
-//  pupils.remove(pupil)
-pupils1.readAll()
+// pupils.update(pupil1, updatedProfile1)
+  // pupils.remove(pupil)
+pupils.readAll()
+
+
+
+//        GROUPS   IMPLEMENTATION
+
+console.log("///////// GROUPS   IMPLEMENTATION")
+
+
+import {Groups} from "./groups/groups"
+
+
+const room = 236;
+const groups = new Groups();
+const groupId = groups.add(room);
+const groupId1 = groups.add(322);
+groups.addPupil(groupId, pupil);
+groups.addPupil(groupId, pupil1);
+groups.removePupil(groupId, pupil);
+groups.read(groupId1);
+groups.update(groupId, {room: 237});
+groups.readAll()
